@@ -23,6 +23,11 @@ public class Teste {
 		Cliente c1 = new Cliente();
 		c1.setSenha(3333);
 		
+		ControleBonificacao cb = new ControleBonificacao();
+		cb.registra(g1);
+		cb.registra(ev1);
+		cb.registra(a1);
+		
 		System.out.println("A gerente " + g1.getNome() +" cujo cpf é " + g1.getCpf() + ", possui uma bonificação de " + g1.getBonificacao() +
 				" reais. Seu acesso ao sistema interno é: " + g1.autentica(1111)); 
 		
@@ -35,5 +40,7 @@ public class Teste {
 				" reais. Seu acesso ao sistema interno é: " + a1.autentica(2222)); 
 		
 		System.out.println("O acesso do cliente ao sistema é " + c1.autentica(3333)); 
+		
+		System.out.println("A soma das bonificações até o momento é R$" + cb.getSoma());
 	}
 }
